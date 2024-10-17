@@ -1,0 +1,27 @@
+<div style='text-align:center'>
+  <h1>Aplicación Atleta - Cálculo del IMC</h1>
+
+  <div>
+    <label for='nombre'>Nombre: </label>
+    <input type='text' [(ngModel)]='nombre' />
+
+    <label for='peso'>Peso: </label>
+    <input type='number' [(ngModel)]='peso' />
+
+    <label for='estatura'>Estatura: </label>
+    <input type='number' [(ngModel)]='estatura' />
+
+    <button (click)='crearAtleta()'>Crear Atleta</button>
+  </div>
+
+  <div *ngIf='atleta'>
+    <h2>Nombre: {{atleta.nombre}} </h2>
+    <h3>Peso: {{atleta.peso}} </h3>
+    <h3>Estatura: {{atleta.estatura}} </h3>
+
+    <button (click)='calcularIMC()'>Calcular IMC</button>
+
+    <div *ngIf='imcResultado'>
+      <p>{{ imcResultado}}</p>
+    </div>
+  </div>
